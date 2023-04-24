@@ -2,6 +2,11 @@
 从淡樱镜像站扒拉来改的,随便用吧
 希望能有帮助
 */
+
+body {
+    background: linear-gradient(to left bottom, #cffcf8, #fccfd7);
+}
+
 .navigation {
     background: rgba(255, 143, 202, 0.85);
     width: 100%;

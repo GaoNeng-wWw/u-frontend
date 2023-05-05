@@ -26,9 +26,9 @@ const {csv, csv_keys} = toRefs(props)
 </script>
 
 <template>
-  <section class="w-full flex flex-wrap justify-center gap-[20px]">
+  <section class="w-full grid grid-cols-2 gap-4">
     <template v-for="item in csv">
-      <div class=" max-w-full break-words flex-shrink-0 flex-grow-0 basis-[calc(100%/3)]">
+      <div class=" max-w-full break-words flex-shrink-0 flex-grow-1">
         <card v-if="item" :key="item?.id">
           <template #header>
             <h1>{{ item?.school_name }}</h1>

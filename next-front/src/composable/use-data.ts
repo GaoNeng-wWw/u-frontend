@@ -64,7 +64,6 @@ export async function useData(raw?: string): Promise<{ header: csvKeys; content:
                         }
                     })
                     .filter((val) => val !== null);
-    console.log(content)
     const total = content.length;
     return {
         header,

@@ -23,12 +23,13 @@ const props = defineProps<{
 }>();
 
 const {csv, csv_keys} = toRefs(props)
+console.log(csv)
 </script>
 
 <template>
-  <section class="w-full grid grid-cols-2 gap-4">
+  <section class="w-full grid grid-cols-1 gap-4 grid-flow-dense sm:grid-cols-2">
     <template v-for="item in csv">
-      <div class=" max-w-full break-words flex-shrink-0 flex-grow-1">
+      <div class=" max-w-full break-words">
         <card v-if="item" :key="item?.id">
           <template #header>
             <h1>{{ item?.school_name }}</h1>

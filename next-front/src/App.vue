@@ -26,8 +26,8 @@ const onSearch = (data: (csvDataItem|null)[]) => {
         <div class="banner-subtitle text-2xl text-center text-gray-500">Protect yourself</div>
       </header>
       <article>
-        <header>
-          <search @search="onSearch" v-model="dataset" v-if="dataset.length" />
+        <header class="fixed bottom-2 left-1/2 -translate-x-1/2 w-full flex items-center justify-center">
+          <search @search="onSearch" v-model="dataset" v-if="dataset.length"  />
         </header>
         <cardList :csv_keys="csvHeader" :csv="renderData" />
       </article>

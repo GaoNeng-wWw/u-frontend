@@ -29,21 +29,19 @@ watch(searchValue, (keyword: string)=>{
 </script>
 
 <template>
-    <div class="fixed bottom-2 left-1/2 -translate-x-1/2">
-        <div 
-            class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-center border-gray-300 border-2 transition-all duration-200"
-            :class="[active ? 'w-96 h-16 px-4 gap-2' : 'w-16 h-16']"
-            @click="active = !active"
-            v-on-click-outside="closeModal"
+    <div 
+        class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-center border-gray-300 border-2 transition-all duration-200"
+        :class="[active ? 'w-5/6 h-16 px-4 gap-2 sm:w-96' : 'w-16 h-16']"
+        @click="active = !active"
+        v-on-click-outside="closeModal"
         >
-            <MagnifyingGlassIcon
-                class=" w-8 h-8 cursor-pointer"
-            />
-            <input 
-                class="gray-400 h-full outline-none transition-all duration-200"
-                :class="[active ? 'w-full' : ' w-0']"
-                v-model="searchValue"
-            @click.stop/>
-        </div>
+        <MagnifyingGlassIcon
+            class="w-8 h-8 cursor-pointer"
+        />
+        <input 
+            class="gray-400 h-full outline-none transition-all duration-200"
+            :class="[active ? 'w-full' : ' w-0']"
+            v-model="searchValue"
+        @click.stop/>
     </div>
 </template>

@@ -3,14 +3,19 @@ import type {Ref} from 'vue';
 import {ref} from 'vue';
 import {useData} from './composable/use-data';
 import cardList, {csvDataItem, csvKeys} from './components/cardList.vue';
-const csvData:Ref<(csvDataItem|null)[] | null> = ref(null);
+import search from './components/search.vue';
+const renderData:Ref<(csvDataItem|null)[]> = ref([null]);
 const csvHeader:Ref<csvKeys | null> = ref(null);
+const dataset: Ref<(csvDataItem|null)[]> = ref([null]);
 useData()
 .then(({header, content}) => {
   csvHeader.value = header;
-  csvData.value = content;
-  console.log(header);
+  renderData.value = content;
+  dataset.value = content;
 })
+const onSearch = (data: (csvDataItem|null)[]) => {
+  renderData.value = data;
+}
 </script>
 
 <template>
@@ -21,9 +26,10 @@ useData()
         <div class="banner-subtitle text-2xl text-center text-gray-500">Protect yourself</div>
       </header>
       <article>
-        <cardList :csv_keys="csvHeader" :csv="csvData" />
-        <!-- {{ csvTitle.join(',') }} -->
-        ..
+        <header>
+          <search @search="onSearch" v-model="dataset" v-if="dataset.length" />
+        </header>
+        <cardList :csv_keys="csvHeader" :csv="renderData" />
       </article>
       <footer>
         Copyright © 2023 an ordinary MtF

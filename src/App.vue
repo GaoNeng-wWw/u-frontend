@@ -19,7 +19,7 @@ const onSearch = (data: (csvDataItem|null)[]) => {
 </script>
 
 <template>
-  <main class="bg-gray-200 h-full">
+  <main class="bg-gray-200 min-h-screen">
     <article class="max-w-7xl mx-auto">
       <header class="h-80 flex flex-col justify-center items-center gap-2">
         <div class="banner-title text-4xl text-center">Night has fallen</div>

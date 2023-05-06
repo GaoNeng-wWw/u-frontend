@@ -30,15 +30,18 @@ watch(searchValue, (keyword: string)=>{
 
 <template>
     <div 
-        class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-center border-gray-300 border-2 transition-all duration-200"
-        :class="[active ? 'w-5/6 h-16 px-4 gap-2 sm:w-96' : 'w-16 h-16']"
+        class="opacity-25 w-16 h-16 bg-white rounded-full flex items-center justify-center text-center border-gray-300 border-2 transition-all duration-200"
+        :class="[active ? 'w-5/6 h-16 px-4 gap-2 opacity-100 sm:w-96' : 'w-16 h-16 hover:opacity-95']"
         @click="active = !active"
         v-on-click-outside="closeModal"
         >
-        <MagnifyingGlassIcon
-            class="w-8 h-8 cursor-pointer"
-        />
+        <label for="search-bar">
+            <MagnifyingGlassIcon
+                class="w-8 h-8 cursor-pointer"
+            />
+        </label>
         <input 
+            id="search-bar"
             class="gray-400 h-full outline-none transition-all duration-200"
             :class="[active ? 'w-full' : ' w-0']"
             v-model="searchValue"

@@ -31,7 +31,7 @@ const onSearch = (data: (csvDataItem|null)[]) => {
         </header>
         <cardList :csv_keys="csvHeader" :csv="renderData" />
       </article>
-      <footer>
+      <footer class="text-center py-4">
         Copyright © 2023 an ordinary MtF
       </footer>
     </article>
